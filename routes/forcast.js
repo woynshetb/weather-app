@@ -5,11 +5,14 @@ const request = require("request");
 router.get("/forcast/:city/:day", async (req, res) => {
   const city = req.params.city;
   const days = req.params.day;
+  console.log(process.env.API_KEY);
 
   const optipns = {
     method: "GET",
     url:
-      "http://api.weatherapi.com/v1/forecast.json?key=73af8f29e27149e7b1a73152211812&q=" +
+      "http://api.weatherapi.com/v1/forecast.json?key=" +
+      process.env.API_KEY +
+      "&q=" +
       city +
       "&days=" +
       days +

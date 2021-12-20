@@ -1,8 +1,12 @@
 const PORT = process.env.PORT || 6000;
 const http = require("http");
 const express = require("express");
+const path = require("path");
 const app = express();
 const router = require("./routes");
+const dotenv = require("dotenv").config({
+  path: path.join(__dirname, "config/.env"),
+}).parsed;
 
 app.use(router);
 

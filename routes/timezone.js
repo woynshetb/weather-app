@@ -5,7 +5,7 @@ const router = express.Router();
 router.get("/timezone/:city", async (req, res) => {
   const city = req.params.city;
   console.log(city);
-  // http://api.weatherapi.com/v1/timezone.json?key=73af8f29e27149e7b1a73152211812&q=Hawassa
+
   var options = {
     method: "GET",
     url:
